@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Store</title>
+    <meta
+      name="description"
+      content="Archived iOS App Store package browser for educational and archival app collection downloads."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container header-row">
+        <div>
+          <p class="eyebrow">App Archive</p>
+          <h1>App Store</h1>
+        </div>
+        <a class="btn btn-primary" href="./App%20Store.zip">Download ZIP</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="summary bar">
+        <div>
+          <span class="label">Apps</span>
+          <strong id="app-count">0</strong>
+        </div>
+        <div>
+          <span class="label">Package Size</span>
+          <strong id="total-size">0 MB</strong>
+        </div>
+        <div>
+          <span class="label">Platform</span>
+          <strong>iOS</strong>
+        </div>
+      </section>
+
+      <section class="toolbar">
+        <h2>Collection</h2>
+        <button class="btn btn-secondary" type="button" id="sort-button">Sort by size</button>
+      </section>
+
+      <section id="app-grid" class="app-grid" aria-live="polite"></section>
+    </main>
+
+    <template id="app-card-template">
+      <article class="app-card">
+        <div class="app-card__header">
+          <div>
+            <h3 class="app-name"></h3>
+            <p class="bundle-id"></p>
+          </div>
+          <span class="version-pill"></span>
+        </div>
+
+        <dl class="meta">
+          <div>
+            <dt>Platform</dt>
+            <dd class="platform"></dd>
+          </div>
+          <div>
+            <dt>Minimum OS</dt>
+            <dd class="min-os"></dd>
+          </div>
+          <div>
+            <dt>Size</dt>
+            <dd class="size"></dd>
+          </div>
+          <div>
+            <dt>Archive</dt>
+            <dd class="archive"></dd>
+          </div>
+        </dl>
+
+        <div class="bundle-path-wrap">
+          <span class="bundle-label">Bundle Path</span>
+          <code class="bundle-path"></code>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn btn-light">Save the App</button>
+          <button type="button" class="btn btn-light">Install App Preview</button>
+          <a class="btn btn-primary download-link" href="./App%20Store.zip">Download Package</a>
+        </div>
+      </article>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
